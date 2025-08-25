@@ -2,33 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Flow (FLW) — Whitepaper</title>
+  <link rel="canonical" href="https://flowtoken.to/" />
+
+  <!-- Basic SEO -->
+  <meta name="description" content="Flow (FLW) is an experimental meme token on BSC. Whitepaper, tokenomics, risks, legal disclaimers, and official links." />
+  <meta name="keywords" content="Flow token, FLW, meme token, cryptocurrency, whitepaper, Binance Smart Chain, BSC, PancakeSwap" />
+  <meta name="author" content="Flow Project" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://flowtoken.to/" />
+  <meta property="og:title" content="Flow (FLW) — Whitepaper" />
+  <meta property="og:description" content="Experimental meme token on BSC. Read the whitepaper and tokenomics." />
+  <meta property="og:image" content="https://flowtoken.to/og-image.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Flow (FLW) — Whitepaper" />
+  <meta name="twitter:description" content="Experimental meme token on BSC. Read the whitepaper and tokenomics." />
+  <meta name="twitter:image" content="https://flowtoken.to/og-image.png" />
+
+  <!-- Robots + sitemap hint (дублює robots.txt, не завадить) -->
+  <meta name="robots" content="index, follow" />
+  <link rel="sitemap" type="application/xml" href="https://flowtoken.to/sitemap.xml" />
+
+  <!-- Optional favicon (додай файл /favicon.ico за бажанням) -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Flow (FLW) — Whitepaper",
+    "url": "https://flowtoken.to/",
+    "inLanguage": "en",
+    "description": "Flow (FLW) is an experimental meme token on BSC. Whitepaper, tokenomics, risks, legal disclaimers, and official links.",
+    "potentialAction": {
+      "@type": "ReadAction",
+      "target": "https://flowtoken.to/"
+    }
+  }
+  </script>
+
   <style>
+    :root {
+      --bg: #000;
+      --text: #f00;
+      --heading: #ff3333;
+      --link: #ff5555;
+      --btn: #ff0000;
+      --btn-hover: #cc0000;
+      --maxw: 900px;
+    }
+    * { box-sizing: border-box; }
     body {
-      background-color: #000;
-      color: #f00;
+      background-color: var(--bg);
+      color: var(--text);
       font-family: Arial, sans-serif;
       padding: 2rem;
       line-height: 1.6;
+      margin: 0;
     }
-    h1, h2, h3 {
-      color: #ff3333;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-    }
-    .section {
-      margin-bottom: 2rem;
-    }
-    a {
-      color: #ff5555;
-    }
+    h1, h2, h3 { color: var(--heading); }
+    .container { max-width: var(--maxw); margin: 0 auto; }
+    .section { margin-bottom: 2rem; }
+    a { color: var(--link); }
     .button {
       display: inline-block;
       padding: 12px 24px;
-      background-color: #ff0000;
+      background-color: var(--btn);
       color: #000;
       font-weight: bold;
       border-radius: 8px;
@@ -36,86 +82,99 @@
       margin-top: 30px;
       margin-right: 12px;
     }
-    .button:hover {
-      background-color: #cc0000;
+    .button:hover { background-color: var(--btn-hover); }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>White Paper<br>Flow (FLW)</h1>
-    <p><strong>Version:</strong> v1.0<br>
-    <strong>Publish Date:</strong> August 2025</p>
+    <header>
+      <h1>White Paper<br>Flow (FLW)</h1>
+      <p><strong>Version:</strong> v1.0<br><strong>Publish Date:</strong> August 2025</p>
+    </header>
 
-    <div class="section">
-      <h2>1. Introduction</h2>
-      <p>Flow (FLW) is an experimental meme token created as part of a study of crypto market culture and community behavior.
-      The token has no intrinsic utilitarian value and exists as a digital asset.</p>
-      <p>Flow (FLW) is not a security, does not guarantee a return, and should not be considered an investment contract.</p>
-    </div>
+    <main>
+      <section class="section" id="introduction" aria-labelledby="intro-title">
+        <h2 id="intro-title">1. Introduction</h2>
+        <p>Flow (FLW) is an experimental meme token created as part of a study of crypto market culture and community behavior.
+        The token has no intrinsic utilitarian value and exists as a digital asset.</p>
+        <p>Flow (FLW) is not a security, does not guarantee a return, and should not be considered an investment contract.</p>
+      </section>
 
-    <div class="section">
-      <h2>2. Token Description</h2>
-      <ul>
-        <li><strong>Name:</strong> Flow</li>
-        <li><strong>Symbol:</strong> FLW</li>
-        <li><strong>Standard:</strong> BEP-20</li>
-        <li><strong>Total Issue:</strong> 100,000 FLW</li>
-        <li><strong>Utility:</strong> None</li>
-      </ul>
-    </div>
+      <section class="section" id="description" aria-labelledby="desc-title">
+        <h2 id="desc-title">2. Token Description</h2>
+        <ul>
+          <li><strong>Name:</strong> Flow</li>
+          <li><strong>Symbol:</strong> FLW</li>
+          <li><strong>Standard:</strong> BEP-20</li>
+          <li><strong>Total Issue:</strong> 100,000 FLW</li>
+          <li><strong>Utility:</strong> None</li>
+        </ul>
+      </section>
 
-    <div class="section">
-      <h2>3. Tokenomics</h2>
-      <p>Developer: 90% (90,000 FLW)<br>
-      Liquidity Pool: 10% (10,000 FLW)</p>
-      <p>This allocation is fixed and public from the moment of creation.</p>
-      <p><strong>It is planned</strong> to burn 50% of the total supply (50,000 FLW) within 6 months from the token launch date.</p>
-      <p>The burn will take place publicly with the ability to verify transactions on the blockchain.</p>
-      <p>Planned actions (including token burns) can be changed or canceled at the discretion of the developer.</p>
-    </div>
+      <section class="section" id="tokenomics" aria-labelledby="tokenomics-title">
+        <h2 id="tokenomics-title">3. Tokenomics</h2>
+        <p>Developer: 90% (90,000 FLW)<br> Liquidity Pool: 10% (10,000 FLW)</p>
+        <p>This allocation is fixed and public from the moment of creation.</p>
+        <p><strong>It is planned</strong> to burn 50% of the total supply (50,000 FLW) within 6 months from the token launch date.</p>
+        <p>The burn will take place publicly with the ability to verify transactions on the blockchain.</p>
+        <p>Planned actions (including token burns) can be changed or canceled at the discretion of the developer.</p>
+      </section>
 
-    <div class="section">
-      <h2>4. Developer Reward</h2>
-      <p>90% of the tokens belong to the developer as an official reward for creating the token.
-      The developer has the right to sell or hold their tokens at any time and at their own discretion.</p>
-    </div>
+      <section class="section" id="reward" aria-labelledby="reward-title">
+        <h2 id="reward-title">4. Developer Reward</h2>
+        <p>90% of the tokens belong to the developer as an official reward for creating the token.
+        The developer has the right to sell or hold their tokens at any time and at their own discretion.</p>
+      </section>
 
-    <div class="section">
-      <h2>5. Risk Warning</h2>
-      <ul>
-        <li>High Volatility — FLW price can fluctuate dramatically.</li>
-        <li>Loss of Investment — Buying a token can result in a complete loss of your invested funds.</li>
-        <li>No Profit — There are no guarantees or promises of profit.</li>
-        <li>No Utilitarian Function — The token serves no role in the ecosystem other than existing as a digital asset.</li>
-        <li>Regulatory risks — In different countries, the token may be subject to legal restrictions.</li>
-      </ul>
-    </div>
+      <section class="section" id="risks" aria-labelledby="risks-title">
+        <h2 id="risks-title">5. Risk Warning</h2>
+        <ul>
+          <li>High Volatility — FLW price can fluctuate dramatically.</li>
+          <li>Loss of Investment — Buying a token can result in a complete loss of your invested funds.</li>
+          <li>No Profit — There are no guarantees or promises of profit.</li>
+          <li>No Utilitarian Function — The token serves no role in the ecosystem other than existing as a digital asset.</li>
+          <li>Regulatory risks — In different countries, the token may be subject to legal restrictions.</li>
+        </ul>
+      </section>
 
-    <div class="section">
-      <h2>6. Legal Disclaimer</h2>
-      <p>This document is not:</p>
-      <ul>
-        <li>a prospectus;</li>
-        <li>an investment offer;</li>
-        <li>financial advice.</li>
-      </ul>
-    </div>
+      <section class="section" id="legal" aria-labelledby="legal-title">
+        <h2 id="legal-title">6. Legal Disclaimer</h2>
+        <p>This document is not:</p>
+        <ul>
+          <li>a prospectus;</li>
+          <li>an investment offer;</li>
+          <li>financial advice.</li>
+        </ul>
+      </section>
 
-    <div class="section">
-      <h2>7. Announcements and Community Activities</h2>
-      <p>Official announcements regarding:</p>
-      <ul>
-        <li>token burns (burn events),</li>
-        <li>giveaways,</li>
-        <li>project news</li>
-      </ul>
-      <p>are published exclusively in the community Telegram channel: <a href="https://t.me/+woz0pdu8HLk4MDFk">t.me/+woz0pdu8HLk4MDFk</a>.</p>
-      <p>All users act at their own risk. The Flow token (FLW) is created solely for experimental and entertainment purposes.</p>
-    </div>
+      <section class="section" id="community" aria-labelledby="community-title">
+        <h2 id="community-title">7. Announcements and Community Activities</h2>
+        <p>Official announcements regarding:</p>
+        <ul>
+          <li>token burns (burn events),</li>
+          <li>giveaways,</li>
+          <li>project news</li>
+        </ul>
+        <p>are published exclusively in the community Telegram channel:
+          <a href="https://t.me/+woz0pdu8HLk4MDFk" rel="noopener noreferrer" target="_blank" aria-label="Telegram channel">t.me/+woz0pdu8HLk4MDFk</a>.
+        </p>
+        <p>All users act at their own risk. The Flow token (FLW) is created solely for experimental and entertainment purposes.</p>
+      </section>
 
-    <a class="button" href="https://pancakeswap.finance/swap?outputCurrency=0x961377761D6e152E485871D7f888e0442FA3CeAA&chain=bsc" target="_blank">Buy on PancakeSwap</a>
-    <a class="button" href="https://t.me/+woz0pdu8HLk4MDFk" target="_blank">Telegram</a>
+      <div class="section" aria-label="Primary actions">
+        <a class="button"
+           href="https://pancakeswap.finance/swap?outputCurrency=0x961377761D6e152E485871D7f888e0442FA3CeAA&chain=bsc"
+           target="_blank" rel="noopener noreferrer">Buy on PancakeSwap</a>
+        <a class="button"
+           href="https://t.me/+woz0pdu8HLk4MDFk"
+           target="_blank" rel="noopener noreferrer">Telegram</a>
+        <span class="sr-only">External links open in a new tab.</span>
+      </div>
+    </main>
   </div>
 </body>
 </html>
